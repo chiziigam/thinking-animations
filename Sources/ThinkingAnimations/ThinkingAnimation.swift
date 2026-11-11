@@ -147,3 +147,13 @@ public struct Moire: View {
     public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
     public var body: some View { ThinkingAnimation(.moire, size: size, color: color) }
 }
+public struct Cube: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.cube, size: size, color: color) }
+}
+public struct Snake: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.snake, size: size, color: color) }
+}

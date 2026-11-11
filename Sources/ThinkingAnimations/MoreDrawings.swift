@@ -150,4 +150,45 @@ extension Drawing {
             }
         }
     }
+
+    static func cube(_ gc: inout GraphicsContext, _ t: Double, _ ink: Color) {
+        let corners: [(Double, Double, Double)] = (0..<8).map { i in
+            (i & 1 == 0 ? -1 : 1, i & 2 == 0 ? -1 : 1, i & 4 == 0 ? -1 : 1)
+        }
+        let ay = t * 0.8, ax = 0.6 + 0.3 * sin(t * 0.5)
+        let projected: [CGPoint] = corners.map { c in
+            let x1 = c.0 * cos(ay) + c.2 * sin(ay)
+            let z1 = -c.0 * sin(ay) + c.2 * cos(ay)
+            let y2 = c.1 * cos(ax) - z1 * sin(ax)
+            let z2 = c.1 * sin(ax) + z1 * cos(ax)
+            let k = 1 / (1 - z2 * 0.12)
+            return CGPoint(x: 48 + x1 * 24 * k, y: 48 + y2 * 24 * k)
+        }
+        var path = Path()
+        for i in 0..<8 {
+            for bit in [1, 2, 4] where i & bit == 0 {
+                path.move(to: projected[i])
+                path.addLine(to: projected[i | bit])
+            }
+        }
+        gc.stroke(path, with: .color(ink), style: StrokeStyle(lineWidth: 3.2, lineCap: .round))
+        for p in projected { dot(&gc, p.x, p.y, 3.6, 1, ink) }
+    }
+
+    static func snake(_ gc: inout GraphicsContext, _ t: Double, _ ink: Color) {
+        // A lit path moves along the serpentine order of a 4x4 grid.
+        let order: [(Int, Int)] = (0..<16).map { i in
+            let row = i / 4, col = i % 4
+            return (row % 2 == 0 ? col : 3 - col, row)
+        }
+        let head = t * 7
+        for (i, cell) in order.enumerated() {
+            var d = head - Double(i)
+            d = d.truncatingRemainder(dividingBy: 16)
+            if d < 0 { d += 16 }
+            let lit = d < 5 ? 1 - d / 5 : 0
+            let rect = CGRect(x: 8 + Double(cell.0) * 21, y: 8 + Double(cell.1) * 21, width: 17, height: 17)
+            gc.fill(Path(roundedRect: rect, cornerRadius: 4), with: .color(ink.opacity(0.12 + 0.88 * lit)))
+        }
+    }
 }

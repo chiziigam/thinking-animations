@@ -1,6 +1,6 @@
 # ThinkingAnimations
 
-Nineteen small SwiftUI animations for showing that something is working. Each one is drawn with `Canvas`, uses one color, and has no assets or dependencies. A rotating indicator cycles through them.
+Twenty-one small SwiftUI animations for showing that something is working. Each one is drawn with `Canvas`, uses one color, and has no assets or dependencies. A rotating indicator cycles through them.
 
 Requires iOS 17 / macOS 14, Swift 5.9.
 
@@ -27,13 +27,15 @@ Requires iOS 17 / macOS 14, Swift 5.9.
 | Dot grid | `DotGrid` | A 5x5 grid of dots swells in rings from the center. | <img src="docs/dot-grid.gif" width="60"> |
 | Squares | `Squares` | Five nested squares turn back and forth, each a little behind the last. | <img src="docs/squares.gif" width="60"> |
 | Moire | `Moire` | Two sets of concentric rings slide through each other. | <img src="docs/moire.gif" width="60"> |
+| Cube | `Cube` | A wireframe cube turns in perspective and tilts back and forth. | <img src="docs/cube.gif" width="60"> |
+| Snake | `Snake` | A lit path with a fading tail runs along a 4x4 grid in a zigzag. | <img src="docs/snake.gif" width="60"> |
 
 ## Install
 
 In Xcode: File > Add Package Dependencies, then enter the repository URL. Or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/<your-name>/thinking-animations", from: "0.1.0")
+.package(url: "https://github.com/commonsfounder/thinking-animations", from: "0.1.0")
 ```
 
 ## Use
