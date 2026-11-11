@@ -1,6 +1,6 @@
 # ThinkingAnimations
 
-Fourteen small SwiftUI animations for showing that something is working. Each one is drawn with `Canvas`, uses one color, and has no assets or dependencies. A rotating indicator cycles through them.
+Seventeen small SwiftUI animations for showing that something is working. Each one is drawn with `Canvas`, uses one color, and has no assets or dependencies. A rotating indicator cycles through them.
 
 Requires iOS 17 / macOS 14, Swift 5.9.
 
@@ -17,11 +17,16 @@ Requires iOS 17 / macOS 14, Swift 5.9.
 | Flip tiles | `FlipTiles` | A 3x3 grid of tiles flips in a diagonal wave. | `docs/flip.gif` |
 | Attractor | `Attractor` | Points move along a Lorenz attractor that slowly rotates. | `docs/attractor.gif` |
 | Lissajous | `Lissajous` | A dot traces a looping Lissajous curve with a fading trail. | `docs/lissajous.gif` |
-| Cradle | `Cradle` | Five balls on strings; the end balls swing out and back in turn. | `docs/cradle.gif` |
 | Ripple | `Ripple` | Rings spread from a center dot and fade as they grow. | `docs/ripple.gif` |
 | Glider | `Glider` | A Game of Life glider walks across a wrapping 6x6 grid. | `docs/glider.gif` |
 | Rose | `Rose` | A rose curve whose petal count drifts while it turns. | `docs/rose.gif` |
 | Bars | `Bars` | Five rounded bars rise and fall in a wave. | `docs/bars.gif` |
+| Wave | `Wave` | A thick line carries a traveling wave that is pinned at both ends. | `docs/wave.gif` |
+| Helix | `Helix` | Two strands of dots twist around each other, larger when near. | `docs/helix.gif` |
+| Spirograph | `Spirograph` | A closed spirograph curve turns slowly. | `docs/spirograph.gif` |
+| Dot grid | `DotGrid` | A 5x5 grid of dots swells in rings from the center. | `docs/dot-grid.gif` |
+| Squares | `Squares` | Five nested squares turn back and forth, each a little behind the last. | `docs/squares.gif` |
+| Moire | `Moire` | Two sets of concentric rings slide through each other. | `docs/moire.gif` |
 
 Recordings are not added yet.
 

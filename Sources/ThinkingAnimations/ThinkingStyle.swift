@@ -3,7 +3,7 @@ import SwiftUI
 /// All animations.
 public enum ThinkingStyle: CaseIterable, Identifiable, Sendable {
     case figureEight, spark, morph, hex, pendulum, sunflower, flip, attractor
-    case lissajous, cradle, ripple, life, rose, bars
+    case lissajous, ripple, life, rose, bars, wave, helix, spirograph, dotGrid, squares, moire
 
     public var id: Self { self }
 
@@ -18,11 +18,16 @@ public enum ThinkingStyle: CaseIterable, Identifiable, Sendable {
         case .flip: "Flip tiles"
         case .attractor: "Attractor"
         case .lissajous: "Lissajous"
-        case .cradle: "Cradle"
         case .ripple: "Ripple"
         case .life: "Glider"
         case .rose: "Rose"
         case .bars: "Bars"
+        case .wave: "Wave"
+        case .helix: "Helix"
+        case .spirograph: "Spirograph"
+        case .dotGrid: "Dot grid"
+        case .squares: "Squares"
+        case .moire: "Moire"
         }
     }
 
@@ -37,11 +42,16 @@ public enum ThinkingStyle: CaseIterable, Identifiable, Sendable {
         case .flip: Drawing.flip
         case .attractor: Drawing.attractor
         case .lissajous: Drawing.lissajous
-        case .cradle: Drawing.cradle
         case .ripple: Drawing.ripple
         case .life: Drawing.life
         case .rose: Drawing.rose
         case .bars: Drawing.bars
+        case .wave: Drawing.wave
+        case .helix: Drawing.helix
+        case .spirograph: Drawing.spirograph
+        case .dotGrid: Drawing.dotGrid
+        case .squares: Drawing.squares
+        case .moire: Drawing.moire
         }
     }
 }

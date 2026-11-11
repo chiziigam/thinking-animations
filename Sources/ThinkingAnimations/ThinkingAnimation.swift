@@ -97,11 +97,6 @@ public struct Lissajous: View {
     public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
     public var body: some View { ThinkingAnimation(.lissajous, size: size, color: color) }
 }
-public struct Cradle: View {
-    var size: CGFloat, color: Color
-    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
-    public var body: some View { ThinkingAnimation(.cradle, size: size, color: color) }
-}
 public struct Ripple: View {
     var size: CGFloat, color: Color
     public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
@@ -121,4 +116,34 @@ public struct Bars: View {
     var size: CGFloat, color: Color
     public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
     public var body: some View { ThinkingAnimation(.bars, size: size, color: color) }
+}
+public struct Wave: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.wave, size: size, color: color) }
+}
+public struct Helix: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.helix, size: size, color: color) }
+}
+public struct Spirograph: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.spirograph, size: size, color: color) }
+}
+public struct DotGrid: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.dotGrid, size: size, color: color) }
+}
+public struct Squares: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.squares, size: size, color: color) }
+}
+public struct Moire: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.moire, size: size, color: color) }
 }
