@@ -35,7 +35,7 @@ Requires iOS 17 / macOS 14, Swift 5.9.
 In Xcode: File > Add Package Dependencies, then enter the repository URL. Or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/commonsfounder/thinking-animations", from: "0.1.0")
+.package(url: "https://github.com/chiziigam/thinking-animations", from: "0.1.0")
 ```
 
 ## Use
