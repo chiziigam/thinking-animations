@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Shows all eight animations in a grid. Used by the previews and the demo.
+/// Shows all animations in a grid. Used by the previews and the demo.
 public struct ThinkingGallery: View {
     public init() {}
 

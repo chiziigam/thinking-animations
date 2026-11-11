@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Rotates through all eight animations, one every `ThinkingTiming.interval` seconds,
+/// Rotates through all of them animations, one every `ThinkingTiming.interval` seconds,
 /// with a cross-fade. The order is shuffled per `since` date and never repeats
 /// the same animation twice in a row. Interruptible: remove the view and it stops.
 public struct ThinkingIndicator: View {

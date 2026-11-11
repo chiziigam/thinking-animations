@@ -1,6 +1,6 @@
 # ThinkingAnimations
 
-Eight small SwiftUI animations for showing that something is working. Each one is drawn with `Canvas`, uses one color, and has no assets or dependencies. A rotating indicator cycles through them.
+Fourteen small SwiftUI animations for showing that something is working. Each one is drawn with `Canvas`, uses one color, and has no assets or dependencies. A rotating indicator cycles through them.
 
 Requires iOS 17 / macOS 14, Swift 5.9.
 
@@ -16,6 +16,12 @@ Requires iOS 17 / macOS 14, Swift 5.9.
 | Sunflower | `Sunflower` | 64 dots in a sunflower seed pattern pulse outward in a wave. | `docs/sunflower.gif` |
 | Flip tiles | `FlipTiles` | A 3x3 grid of tiles flips in a diagonal wave. | `docs/flip.gif` |
 | Attractor | `Attractor` | Points move along a Lorenz attractor that slowly rotates. | `docs/attractor.gif` |
+| Lissajous | `Lissajous` | A dot traces a looping Lissajous curve with a fading trail. | `docs/lissajous.gif` |
+| Cradle | `Cradle` | Five balls on strings; the end balls swing out and back in turn. | `docs/cradle.gif` |
+| Ripple | `Ripple` | Rings spread from a center dot and fade as they grow. | `docs/ripple.gif` |
+| Glider | `Glider` | A Game of Life glider walks across a wrapping 8x8 grid. | `docs/glider.gif` |
+| Rose | `Rose` | A rose curve whose petal count drifts while it turns. | `docs/rose.gif` |
+| Bars | `Bars` | Five rounded bars rise and fall in a wave. | `docs/bars.gif` |
 
 Recordings are not added yet.
 
@@ -34,7 +40,7 @@ import ThinkingAnimations
 
 Spark(size: 24, color: .primary)                    // one animation
 ThinkingAnimation(.morph, size: 32)                 // pick by name
-ThinkingIndicator(since: startDate, size: 24)       // rotates through all eight
+ThinkingIndicator(since: startDate, size: 24)       // rotates through all of them
 ```
 
 `ThinkingGallery()` shows all of them in a grid. Open the package in Xcode and use the `Gallery` preview.

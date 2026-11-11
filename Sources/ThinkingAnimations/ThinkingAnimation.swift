@@ -76,3 +76,33 @@ public struct Attractor: View {
     public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
     public var body: some View { ThinkingAnimation(.attractor, size: size, color: color) }
 }
+public struct Lissajous: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.lissajous, size: size, color: color) }
+}
+public struct Cradle: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.cradle, size: size, color: color) }
+}
+public struct Ripple: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.ripple, size: size, color: color) }
+}
+public struct Glider: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.life, size: size, color: color) }
+}
+public struct Rose: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.rose, size: size, color: color) }
+}
+public struct Bars: View {
+    var size: CGFloat, color: Color
+    public init(size: CGFloat = 24, color: Color = .primary) { self.size = size; self.color = color }
+    public var body: some View { ThinkingAnimation(.bars, size: size, color: color) }
+}

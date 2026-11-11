@@ -1,8 +1,9 @@
 import SwiftUI
 
-/// The eight animations.
+/// All animations.
 public enum ThinkingStyle: CaseIterable, Identifiable, Sendable {
     case figureEight, spark, morph, hex, pendulum, sunflower, flip, attractor
+    case lissajous, cradle, ripple, life, rose, bars
 
     public var id: Self { self }
 
@@ -16,6 +17,12 @@ public enum ThinkingStyle: CaseIterable, Identifiable, Sendable {
         case .sunflower: "Sunflower"
         case .flip: "Flip tiles"
         case .attractor: "Attractor"
+        case .lissajous: "Lissajous"
+        case .cradle: "Cradle"
+        case .ripple: "Ripple"
+        case .life: "Glider"
+        case .rose: "Rose"
+        case .bars: "Bars"
         }
     }
 
@@ -29,6 +36,12 @@ public enum ThinkingStyle: CaseIterable, Identifiable, Sendable {
         case .sunflower: Drawing.sunflower
         case .flip: Drawing.flip
         case .attractor: Drawing.attractor
+        case .lissajous: Drawing.lissajous
+        case .cradle: Drawing.cradle
+        case .ripple: Drawing.ripple
+        case .life: Drawing.life
+        case .rose: Drawing.rose
+        case .bars: Drawing.bars
         }
     }
 }
