@@ -15,10 +15,10 @@ extension Drawing {
     }
 
     static func cradle(_ gc: inout GraphicsContext, _ t: Double, _ ink: Color) {
-        let n = 5, r = 7.0, length = 44.0
+        let n = 5, r = 7.0, length = 42.0
         let phase = t * 2.6
         let swing = sin(phase)
-        let left = max(0, swing) * 0.62, right = max(0, -swing) * 0.62
+        let left = max(0, swing) * 0.42, right = max(0, -swing) * 0.42
         for i in 0..<n {
             let angle = i == 0 ? -left : (i == n - 1 ? right : 0)
             let pivot = CGPoint(x: 48 + (Double(i) - 2) * r * 2, y: 14)
@@ -43,7 +43,7 @@ extension Drawing {
     }
 
     static func life(_ gc: inout GraphicsContext, _ t: Double, _ ink: Color) {
-        // A glider on an 8x8 wrapping grid, advanced four steps per second.
+        // A glider on an 6x6 wrapping grid, advanced four steps per second.
         let glider: [[(Int, Int)]] = {
             var cells: Set<[Int]> = [[1, 0], [2, 1], [0, 2], [1, 2], [2, 2]]
             var out: [[(Int, Int)]] = []
@@ -62,16 +62,16 @@ extension Drawing {
         let step = Int(t * 4)
         let frame = glider[step % 4]
         let shift = step / 4
-        let cell = 96.0 / 8
+        let cell = 96.0 / 6
         for (x, y) in frame {
-            let gx = ((x + shift) % 8 + 8) % 8, gy = ((y + shift) % 8 + 8) % 8
+            let gx = ((x + shift) % 6 + 6) % 6, gy = ((y + shift) % 6 + 6) % 6
             let rect = CGRect(x: Double(gx) * cell + 2, y: Double(gy) * cell + 2, width: cell - 4, height: cell - 4)
             gc.fill(Path(roundedRect: rect, cornerRadius: 3), with: .color(ink.opacity(0.95)))
         }
     }
 
     static func rose(_ gc: inout GraphicsContext, _ t: Double, _ ink: Color) {
-        let k = 3 + 2 * sin(t * 0.3) // petal count drifts between 1 and 5
+        let k = 3.5 + 1.5 * sin(t * 0.3) // petal count drifts between 2 and 5
         var path = Path()
         for i in 0...360 {
             let th = Double(i) / 360 * 2 * .pi * 2

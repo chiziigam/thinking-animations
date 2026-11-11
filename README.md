@@ -19,7 +19,7 @@ Requires iOS 17 / macOS 14, Swift 5.9.
 | Lissajous | `Lissajous` | A dot traces a looping Lissajous curve with a fading trail. | `docs/lissajous.gif` |
 | Cradle | `Cradle` | Five balls on strings; the end balls swing out and back in turn. | `docs/cradle.gif` |
 | Ripple | `Ripple` | Rings spread from a center dot and fade as they grow. | `docs/ripple.gif` |
-| Glider | `Glider` | A Game of Life glider walks across a wrapping 8x8 grid. | `docs/glider.gif` |
+| Glider | `Glider` | A Game of Life glider walks across a wrapping 6x6 grid. | `docs/glider.gif` |
 | Rose | `Rose` | A rose curve whose petal count drifts while it turns. | `docs/rose.gif` |
 | Bars | `Bars` | Five rounded bars rise and fall in a wave. | `docs/bars.gif` |
 

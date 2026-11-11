@@ -6,16 +6,32 @@ public struct ThinkingAnimation: View {
     public var style: ThinkingStyle
     public var size: CGFloat
     public var color: Color
+    /// Draw one fixed moment (seconds) instead of animating. Used for still images.
+    public var time: Double?
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    public init(_ style: ThinkingStyle, size: CGFloat = 24, color: Color = .primary) {
+    public init(_ style: ThinkingStyle, size: CGFloat = 24, color: Color = .primary, time: Double? = nil) {
+        self.time = time
         self.style = style
         self.size = size
         self.color = color
     }
 
     public var body: some View {
+        if let time {
+            Canvas { gc, canvasSize in
+                gc.scaleBy(x: canvasSize.width / 96, y: canvasSize.height / 96)
+                style.draw(&gc, time, color)
+            }
+            .frame(width: size, height: size)
+            .accessibilityHidden(true)
+        } else {
+            animated
+        }
+    }
+
+    private var animated: some View {
         TimelineView(.animation) { context in
             let date = context.date.timeIntervalSinceReferenceDate
             let t = reduceMotion ? ThinkingTiming.stillPose : date
