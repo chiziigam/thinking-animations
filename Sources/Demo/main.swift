@@ -21,6 +21,21 @@ import AppKit
     }
 }
 
+@MainActor func renderFrames(to dir: String) {
+    let fps = 30.0, seconds = 4.0
+    for style in ThinkingStyle.allCases {
+        for f in 0..<Int(fps * seconds) {
+            let view = ThinkingAnimation(style, size: 160, color: .black, time: Double(f) / fps).frame(width: 200, height: 200).background(Color.white)
+            let renderer = ImageRenderer(content: view)
+            renderer.scale = 1
+            guard let image = renderer.nsImage, let tiff = image.tiffRepresentation,
+                  let rep = NSBitmapImageRep(data: tiff), let png = rep.representation(using: .png, properties: [:]) else { continue }
+            let name = "\(dir)/\(style.title.replacingOccurrences(of: " ", with: "-").lowercased())-\(String(format: "%03d", f)).png"
+            try? png.write(to: URL(fileURLWithPath: name))
+        }
+    }
+}
+
 struct DemoApp: App {
     init() { NSApplication.shared.setActivationPolicy(.regular); NSApplication.shared.activate(ignoringOtherApps: true) }
     var body: some Scene {
@@ -30,7 +45,9 @@ struct DemoApp: App {
     }
 }
 
-if let i = CommandLine.arguments.firstIndex(of: "--png"), CommandLine.arguments.count > i + 1 {
+if let i = CommandLine.arguments.firstIndex(of: "--frames"), CommandLine.arguments.count > i + 1 {
+    MainActor.assumeIsolated { renderFrames(to: CommandLine.arguments[i + 1]) }
+} else if let i = CommandLine.arguments.firstIndex(of: "--png"), CommandLine.arguments.count > i + 1 {
     MainActor.assumeIsolated { renderPNG(to: CommandLine.arguments[i + 1]) }
 } else {
     DemoApp.main()
