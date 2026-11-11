@@ -5,5 +5,8 @@ let package = Package(
     name: "ThinkingAnimations",
     platforms: [.iOS(.v17), .macOS(.v14)],
     products: [.library(name: "ThinkingAnimations", targets: ["ThinkingAnimations"])],
-    targets: [.target(name: "ThinkingAnimations")]
+    targets: [
+        .target(name: "ThinkingAnimations"),
+        .executableTarget(name: "Demo", dependencies: ["ThinkingAnimations"])
+    ]
 )
